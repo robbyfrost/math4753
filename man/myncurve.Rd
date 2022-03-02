@@ -4,12 +4,14 @@
 \alias{myncurve}
 \title{myncurve}
 \usage{
-myncurve(mu, sigma)
+myncurve(mu, sigma, a)
 }
 \arguments{
 \item{mu}{mean}
 
 \item{sigma}{standard deviation}
+
+\item{a}{upper bound pf the lower tail}
 }
 \value{
 Displays the curve, shaded area between the curve and x axis from -∞ to x=a, and calculates the area (probability, P(X<=a)) which is released to the command-line in a list.

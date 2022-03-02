@@ -2,6 +2,7 @@
 #'
 #' @param mu mean
 #' @param sigma standard deviation
+#' @param a upper bound pf the lower tail
 #'
 #' @return Displays the curve, shaded area between the curve and x axis from -∞ to x=a, and calculates the area (probability, P(X<=a)) which is released to the command-line in a list.
 #' @export
