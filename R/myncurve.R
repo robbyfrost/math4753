@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-myncurve = function(mu, sigma){
+myncurve = function(mu, sigma, a){
   curve(dnorm(x,mean=mu,sd=sigma), xlim = c(mu-3*sigma, mu + 3*sigma), col = "#840206", ylab = "Density")
   xcurve = seq(qnorm(0.00000001, mu, sigma), a, length = 1000)
   ycurve = dnorm(xcurve, mu, sigma)
