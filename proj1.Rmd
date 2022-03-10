@@ -1,0 +1,51 @@
+---
+title: "Project 1"
+author: "Robby Frost"
+date: "3/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+myddt = function(df, SPECIES){
+  # 1 - 4 --------------------
+  # Narrows data down to a particular species
+  filter = df %>% filter(SPECIES == {{SPECIES}})
+  # Plot Length vs Weight
+  graph = ggplot(filter, aes_string(x = "LENGTH", y = "WEIGHT")) +
+    geom_point(aes_string(color = "RIVER")) + # select color
+    geom_smooth(formula = y~x + I(x^2), method = "lm") + # add quadratic curve
+    ggtitle("Robby Frost") # add name to title
+  print(graph)
+
+  # 5  --------------------
+  # Read function input and write the "filter" data into a csv
+  if (SPECIES == "CCATFISH"){ 
+    write.csv(x = filter, "LvsWforCCATFISH.csv", row.names = TRUE)}
+  if (SPECIES == "SMBUFFALO"){
+    write.csv(x = filter, "LvsWforSMBUFFALO.csv", row.names = TRUE)}
+  if (SPECIES == "LMBASS"){
+    write.csv(x = filter, "LvsWforLMBASS.csv", row.names = TRUE)}
+
+  # 6  --------------------
+  print(df) # print data before subsetting
+  print(filter) # print data after subsetting
+  tab = table(df$RIVER) / length(df$RIVER) 
+  print(tab) # print a relative frequency table
+}
+```
+
+
+```{r}
+library(math4753fros0017)
+library(dplyr)
+library(ggplot2)
+ddt = read.csv("DDT.csv")
+myddt(df = ddt, SPECIES = "CCATFISH")
+myddt(df = ddt, SPECIES = "SMBUFFALO")
+dir()
+```
+

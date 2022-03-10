@@ -1,8 +1,3 @@
-library(dplyr)
-library(ggplot2)
-library(Intro2R)
-
-
 #' @title myddt
 #'
 #' @param df data file
@@ -14,6 +9,10 @@ library(Intro2R)
 #' @examples
 #' \dontrun{myddt(df = ddt, SPECIES = "CCATFISH")}
 myddt = function(df, SPECIES){
+  library(dplyr)
+  library(ggplot2)
+  library(Intro2R)
+
   # 1 - 4 --------------------
   filter = df %>% filter(SPECIES == {{SPECIES}})
   graph = ggplot(filter, aes_string(x = "LENGTH", y = "WEIGHT")) +
