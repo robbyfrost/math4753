@@ -1,4 +1,4 @@
-#' mymaxlik
+#' @title mymaxlik
 #'
 #' @param lfun function
 #' @param x list of numbers
