@@ -4,10 +4,9 @@ Title: Introductory Package
 Version: 0.1.0
 Author: Robby Frost
 Maintainer: Robby Frost <robby@ou.edu>
-Description: This is a test package.
+Description: Contains functions from math stats at OU.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
-Depends: 
-    R (>= 2.10)
+URL: https://github.com/robbyfrost/math4753
